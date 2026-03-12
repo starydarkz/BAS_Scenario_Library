@@ -1,44 +1,21 @@
-# DragonForce Ransomware
+# Ransomware APT Adversary Simulation
 
-## Overview
+This repository contains Cyber Threat Intelligence (CTI) documentation and adversary emulation scenarios based on three ransomware operations:
 
-DragonForce is a ransomware operation operating under a Ransomware-as-a-Service (RaaS) model.  
-The group provides ransomware infrastructure to affiliates who perform the intrusion and deploy the ransomware payload.
+- DragonForce
+- Qilin
+- Warlock
 
-Active since: 2023
+The repository includes:
 
-Business model: White-Label RaaS
+• Threat actor description  
+• MITRE ATT&CK TTP mapping  
+• Attack scenario simulation  
+• References from CTI sources  
+• Importable adversary profiles for MITRE Caldera
 
-## Adversary Structure
+These adversaries can be used for:
 
-- Core developers
-- Affiliate operators
-- Data leak infrastructure operators
-
-## Targeted Victims
-
-- Manufacturing sector
-- Global enterprises
-- Organizations exposing remote services
-
-## Infrastructure
-
-- Data leak sites
-- Exploit kits
-- Compromised accounts
-
-## Capabilities
-
-- Phishing campaigns
-- Vulnerability exploitation
-- Data exfiltration
-- File encryption
-
-## MITRE ATT&CK Techniques
-
-| Technique | Description |
-|-----------|-------------|
-T1078 | Valid Accounts |
-T1133 | External Remote Services |
-T1190 | Exploit Public-Facing Application |
-T1566 | Phishing |
+- Breach & Attack Simulation
+- SOC detection testing
+- Security control validation
