@@ -1,0 +1,16 @@
+id: dragonforce-ransomware
+name: DragonForce Ransomware
+description: >
+  DragonForce ransomware scenario based on phishing access,
+  remote services abuse and exploitation of exposed applications.
+  Replace technique placeholders with ability_id from Caldera.
+atomic_ordering:
+  - T1566_Phishing_Initial_Access
+  - T1133_External_Remote_Services
+  - T1078_Valid_Accounts
+  - T1190_Exploit_Public_Facing_Application
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc
+tags:
+  - ransomware
+  - dragonforce
+  - apt-simulation
