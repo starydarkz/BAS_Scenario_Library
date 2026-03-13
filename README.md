@@ -35,7 +35,7 @@ Sin este script, importar manualmente cientos de técnicas tomaría horas y requ
 
 | Dependencia | Versión mínima | Instalación |
 |-------------|---------------|-------------|
-| Python      | 3.8+          | —           |
+| Python      | 3.8+          | apt install python (debian)  |
 | PyYAML      | cualquiera    | `pip install pyyaml` |
 | git         | cualquiera    | Sistema operativo |
 
@@ -60,32 +60,32 @@ pip install pyyaml
 ### Ejecución completa (recomendado para empezar)
 
 ```bash
-python3 caldera_atomic_sync.py --caldera-path ~/caldera
+python3 caldera_atomic_sync.py --caldera-path ~/pathcaldera/plugings/stockpile
 ```
 
-Esto descarga ART, compara contra tus abilities y genera todo lo faltante en `~/caldera/data/abilities/atomic/`.
+Esto descarga ART, compara contra tus abilities y genera todo lo faltante en `~/pathcaldera/plugings/stockpile/data/abilities/atomic/`.
 
 ### Ver qué se generaría sin crear archivos
 
 ```bash
-python3 caldera_atomic_sync.py --caldera-path ~/caldera --dry-run
+python3 caldera_atomic_sync.py --caldera-path ~/pathcaldera/plugings/stockpile --dry-run
 ```
 
 ### Filtrar por plataformas
 
 ```bash
 # Solo Windows y Linux
-python3 caldera_atomic_sync.py --caldera-path ~/caldera --platforms windows,linux
+python3 caldera_atomic_sync.py --caldera-path ~/pathcaldera/plugings/stockpile --platforms windows,linux
 
 # Solo macOS
-python3 caldera_atomic_sync.py --caldera-path ~/caldera --platforms macos
+python3 caldera_atomic_sync.py --caldera-path ~/pathcaldera/plugings/stockpile --platforms macos
 ```
 
 ### Filtrar por técnicas MITRE específicas
 
 ```bash
 # Solo T1059 (Command and Scripting Interpreter) y T1003 (Credential Dumping)
-python3 caldera_atomic_sync.py --caldera-path ~/caldera --tactics T1059 T1003 T1082
+python3 caldera_atomic_sync.py --caldera-path ~/pathcaldera/plugings/stockpile --tactics T1059 T1003 T1082
 ```
 
 ### Usar un repositorio ART ya descargado
@@ -93,7 +93,7 @@ python3 caldera_atomic_sync.py --caldera-path ~/caldera --tactics T1059 T1003 T1
 ```bash
 # Evita volver a clonar si ya tienes el repositorio local
 python3 caldera_atomic_sync.py \
-  --caldera-path ~/caldera \
+  --caldera-path ~/pathcaldera/plugings/stockpile \
   --skip-clone \
   --temp-dir /opt/atomic-red-team
 ```
@@ -101,22 +101,22 @@ python3 caldera_atomic_sync.py \
 ### Debug detallado
 
 ```bash
-python3 caldera_atomic_sync.py --caldera-path ~/caldera --verbose
+python3 caldera_atomic_sync.py --caldera-path ~/pathcaldera/plugings/stockpile --verbose
 ```
 
 ### Prueba con un número limitado de tests
 
 ```bash
 # Procesa solo los primeros 50 atomics (útil para probar configuración)
-python3 caldera_atomic_sync.py --caldera-path ~/caldera --limit 50
+python3 caldera_atomic_sync.py --caldera-path ~/pathcaldera/plugings/stockpile --limit 50
 ```
 
 ### Guardar en directorio personalizado
 
 ```bash
 python3 caldera_atomic_sync.py \
-  --caldera-path ~/caldera \
-  --output-dir ~/caldera/data/abilities/art-custom
+  --caldera-path ~/pathcaldera/plugings/stockpile \
+  --output-dir ~/pathcaldera/plugings/stockpile/data/abilities/art-custom
 ```
 
 ---
@@ -312,7 +312,7 @@ curl -X POST http://localhost:8888/api/v2/abilities \
 ```bash
 # Generar todas las TTPs para Windows y Linux, con debug
 python3 caldera_atomic_sync.py \
-  --caldera-path ~/caldera \
+  --caldera-path ~/pathcaldera/plugings/stockpile \
   --platforms windows,linux \
   --verbose
 ```
@@ -320,7 +320,7 @@ python3 caldera_atomic_sync.py \
 **Enfocarse en credential access para un engagement:**
 ```bash
 python3 caldera_atomic_sync.py \
-  --caldera-path ~/caldera \
+  --caldera-path ~/pathcaldera/plugings/stockpile \
   --tactics T1003 T1110 T1552 T1555 T1558 \
   --platforms windows
 ```
