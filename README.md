@@ -1,4 +1,4 @@
-# caldera-atomic-sync
+# Caldera Atomic SYNC
 
 > Sincroniza automáticamente las abilities de [MITRE Caldera](https://github.com/mitre/caldera) con el repositorio [Atomic Red Team](https://github.com/redcanaryco/atomic-red-team) de Red Canary, generando los archivos YAML faltantes en el formato nativo que Caldera puede interpretar y cargar directamente.
 
